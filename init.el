@@ -36,6 +36,9 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
+(require 'undo-tree)
+(global-undo-tree-mode)
+
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 
@@ -46,13 +49,13 @@
 (menu-bar-mode -1) ;; hide menu bar
 (tool-bar-mode -1) ;; hide tool bar
 (scroll-bar-mode -1) ;; hide scroll bar
-(undo-tree-mode )
+(undo-tree-mode t)
 
+;; Rebindings
 
-
-;; init.el ends here
-
-
+(define-key elpy-mode-map (kbd "<f5>") 'elpy-shell-send-buffer)
+(define-key elpy-mode-map (kbd "<f9>") 'elpy-shell-send-region-or-buffer)
+(define-key elpy-mode-map (kbd "<f10>") 'elpy-shell-send-codecell)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
