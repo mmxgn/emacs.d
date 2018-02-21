@@ -39,6 +39,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 
@@ -55,6 +56,22 @@
 (define-key elpy-mode-map (kbd "<f5>") 'elpy-shell-send-buffer)
 (define-key elpy-mode-map (kbd "<f9>") 'elpy-shell-send-region-or-buffer)
 (define-key elpy-mode-map (kbd "<f10>") 'elpy-shell-send-codecell)
+
+(define-key elpy-mode-map "\M-]" 'comment-region)
+(define-key elpy-mode-map "\M-[" 'uncomment-region)
+
+;; Other
+
+
+;; Allow ipython buffer to be cleared
+
+(defun my-clear ()
+  (interactive)
+  (let ((comint-buffer-maximum-size 0))
+    (comint-truncate-buffer)))
+
+;;
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -62,7 +79,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
