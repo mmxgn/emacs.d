@@ -49,7 +49,6 @@
 (menu-bar-mode -1) ;; hide menu bar
 (tool-bar-mode -1) ;; hide tool bar
 (scroll-bar-mode -1) ;; hide scroll bar
-(undo-tree-mode t)
 
 ;; Rebindings
 
