@@ -25,8 +25,8 @@
       myPackages)
 
 (elpy-enable)
-(setq python-shell-interpreter "jupyter"
-      python-shell-interpreter-args "console --simple-prompt")
+(setq python-shell-interpreter "python"
+      python-shell-interpreter-args "")
 
 
 (when (require 'flycheck nil t)
@@ -50,6 +50,7 @@
 (menu-bar-mode -1) ;; hide menu bar
 (tool-bar-mode -1) ;; hide tool bar
 (scroll-bar-mode -1) ;; hide scroll bar
+(show-paren-mode 1) ;; Show matching parenthesis
 
 ;; Rebindings
 
