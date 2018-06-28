@@ -80,10 +80,33 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq reftex-default-bibliography '("~/Projects/Public/PhD/bibliography/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/Projects/Public/PhD/bibliography/notes.org"
+      org-ref-default-bibliography '("~/Projects/Public/PhD/bibliography/references.bib")
+      org-ref-pdf-directory "~/Projects/Public/PhD/bibliography/bibtex-pdfs/")
+
+(setq bibtex-completion-bibliography "~/Projects/Public/PhD/bibliography/references.bib"
+      bibtex-completion-library-path "~/Projects/Public/PhD/bibliography/bibtex-pdfs"
+      bibtex-completion-notes-path "~/Projects/Public/PhD/bibliography/helm-bibtex-notes")
+
+;; open pdf with system pdf viewer (works on mac)
+(setq bibtex-completion-pdf-open-function
+  (lambda (fpath)
+    (start-process "open" "*open*" "open" fpath)))
+
+;; alternative
+;; (setq bibtex-completion-pdf-open-function 'org-open-file)
+
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+
+(require 'org-ref)
