@@ -78,9 +78,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("~/Projects/Public/PhD/stage3/text2soundscene/proto/isospace.org")))
  '(package-selected-packages
    (quote
-    (helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -110,3 +113,44 @@
 (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
 
 (require 'org-ref)
+
+(require 'ob-ipython)
+
+
+(local-set-key "\M-\C-g" 'org-plot/gnuplot)
+
+
+(eval-after-load "ox-latex"
+
+  ;; update the list of LaTeX classes and associated header (encoding, etc.)
+  ;; and structure
+  '(add-to-list 'org-latex-classes
+                `("beamer"
+                  ,(concat "\\documentclass[presentation]{beamer}\n"
+                           "[DEFAULT-PACKAGES]"
+                           "[PACKAGES]"
+                           "[EXTRA]\n")
+                  ("\\section{%s}" . "\\section*{%s}")
+                  ("\\subsection{%s}" . "\\subsection*{%s}")
+                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+
+
+(setq org-latex-listings t)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ditaa . t))) ; this line activates ditaa
+
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((latex . t)))
+
+(setq org-agenda-exporter-settings
+      '((ps-print-color-p 'black-white)))
+
+(hs-minor-mode )
+
+(require 'doi-utils)
+
+(global-set-key (kbd "C-!") 'hs-hide-block)
+(global-set-key (kbd "C-@") 'hs-show-block)

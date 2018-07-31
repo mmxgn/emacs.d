@@ -80,7 +80,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -106,3 +106,9 @@
 
 ;; alternative
 ;; (setq bibtex-completion-pdf-open-function 'org-open-file)
+
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+
+(require 'org-ref)
+
+(require 'ob-ipython)
