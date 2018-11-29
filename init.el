@@ -148,9 +148,17 @@
 (setq org-agenda-exporter-settings
       '((ps-print-color-p 'black-white)))
 
-(hs-minor-mode )
+;; (hs-minor-mode )
 
 (require 'doi-utils)
 
 (global-set-key (kbd "C-!") 'hs-hide-block)
 (global-set-key (kbd "C-@") 'hs-show-block)
+
+(defun my-restart-python-console ()
+  "Restart python console before evaluate buffer or region to avoid various uncanny conflicts, like not reloding modules even when they are changed"
+  (interactive)
+  (kill-process "Python")
+  (sleep-for 0.05)
+  (kill-buffer "*Python*")
+  (elpy-shell-send-region-or-buffer))
