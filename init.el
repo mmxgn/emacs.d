@@ -83,7 +83,7 @@
     ("~/Projects/Public/PhD/stage3/text2soundscene/proto/isospace.org")))
  '(package-selected-packages
    (quote
-    (gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (mmm-mode projectile yasnippet faust-mode faustine gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -162,3 +162,10 @@
   (sleep-for 0.05)
   (kill-buffer "*Python*")
   (elpy-shell-send-region-or-buffer))
+
+
+(require 'faust-mode)
+(require 'faustine)
+(setq auto-mode-alist (cons '("\\.dsp$" . faustine-mode) auto-mode-alist))
+(global-auto-complete-mode t)
+

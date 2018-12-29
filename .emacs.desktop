@@ -1,0 +1,115 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Aug 22 19:27:42 2018
+;; Desktop file format version 208
+;; Emacs version 26.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23421 43806 267860 388000) (desktop . "208") "mmxgn@emerdesktop-emergencia" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-PfEd-Inconsolata-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#ffffff") (background-color . "#262626") (mouse-color . "black") (border-color . "#3a3a3a") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . fullheight) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#ff9800") (sticky) (environment) (fullscreen-restore) (modeline . t) (unsplittable) (frameset--id . "3E72-A952-2513-F68B") (frameset--mini t . t) (display . ":1") (icon-name) (explicit-name) (user-size . t) (height . 110) (width . 211) (left . 1900) (top . 19)) ((min-height . 8) (min-width . 20) (min-height-ignore . 4) (min-width-ignore . 15) (min-height-safe . 2) (min-width-safe . 4) (min-pixel-height . 152) (min-pixel-width . 180) (min-pixel-height-ignore . 76) (min-pixel-width-ignore . 135) (min-pixel-height-safe . 38) (min-pixel-width-safe . 36)) hc (pixel-width . 1915) (pixel-height . 2077) (total-width . 213) (total-height . 109) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 909) (pixel-height . 2077) (total-width . 101) (total-height . 109) (normal-height . 1.0) (normal-width . 0.47690217391304346) (buffer "gmlib.py" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 4) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 3710) (start . 2363))) (vc (last . t) (pixel-width . 1006) (pixel-height . 2077) (total-width . 112) (total-height . 109) (normal-height . 1.0) (normal-width . 0.5230978260869565) (combination-limit) (leaf (pixel-width . 1006) (pixel-height . 1032) (total-width . 112) (total-height . 54) (normal-height . 0.5) (normal-width . 1.0) (buffer "soundscene.pl" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 2850) (start . 2147))) (leaf (last . t) (pixel-width . 1006) (pixel-height . 1045) (total-width . 112) (total-height . 55) (normal-height . 0.5) (normal-width . 1.0) (buffer "*Warnings*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 1) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 541) (start . 347))))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("get_filename" "set_source" "left_of" "below_of" "sp_n" "direction" "position" "2" "in_front_of" "def sp_in" "set_ground_object" "listener" "plot" "print(" "height(" "height"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/Projects/Public/PhD/stage3/text2soundscene/proto/TODO.org" "~/.emacs.d/" "~/Projects/Public/PhD/stage3/text2soundscene/proto/soundscene.py" "~/Projects/Public/PhD/stage3/text2soundscene/proto/gmlib.py" "~/Projects/Public/PhD/stage3/text2soundscene/proto/TODO.org" "~/Projects/Public/PhD/stage3/text2soundscene/proto/models.py" "~/Projects/Public/PhD/stage3/text2soundscene/proto/soundscene.py" "~/Projects/Public/PhD/stage3/text2soundscene/proto/TODO.org" "~/.emacs.d/" "~/Projects/Public/PhD/stage3/text2soundscene/proto/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/proto/gmlib.py"
+  "gmlib.py"
+  'python-mode
+  '(eldoc-mode elpy-mode company-mode highlight-indentation-mode yas-minor-mode flycheck-mode undo-tree-mode linum-mode)
+  3710
+  '(3634 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 23421 38206 532988 84000) (buffer-file-coding-system . undecided-unix) (overwrite-mode))
+  '((mark-ring (3710 3710 334 3464 296 3502 3500 2418 11358 10760 11219 11521 11091 10795 10832 10794))))
+
+(desktop-create-buffer 208
+  "/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/proto/soundscene.py"
+  "soundscene.py"
+  'python-mode
+  '(eldoc-mode elpy-mode company-mode highlight-indentation-mode yas-minor-mode flycheck-mode undo-tree-mode linum-mode)
+  8355
+  '(7845 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 23421 38199 593400 2000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (6274 6301 6403 6225 3618 3485 3483 3168 3167 4528 4526 4495 3873 5410 8397 8355))))
+
+(desktop-create-buffer 208
+  "/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/proto/soundscene.pl"
+  "soundscene.pl"
+  'prolog-mode
+  '(undo-tree-mode linum-mode)
+  2850
+  '(1251 nil)
+  nil
+  nil
+  '((buffer-display-time 23421 38206 532990 512000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1249 1229 265 280 3083 1116 2432 1202 1147 1174 1510 3241 3216 3188 2051 2850))))
+
+(desktop-create-buffer 208
+  "/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/proto/TODO.org"
+  "TODO.org"
+  'org-mode
+  '(undo-tree-mode linum-mode)
+  1805
+  '(8 nil)
+  nil
+  nil
+  '((buffer-display-time 23421 38201 765651 771000) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
+  '((mark-ring (1805 1806 1664 1675))))
+
+(desktop-create-buffer 208
+  nil
+  "data"
+  'dired-mode
+  '(linum-mode)
+  217
+  '(nil nil)
+  t
+  '("/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/data/")
+  '((buffer-display-time 23420 63751 341240 209000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "text2soundscene"
+  'dired-mode
+  '(linum-mode)
+  264
+  '(nil nil)
+  t
+  '("/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/")
+  '((buffer-display-time 23420 62284 307303 427000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/proto/models.py"
+  "models.py"
+  'python-mode
+  '(eldoc-mode elpy-mode company-mode highlight-indentation-mode yas-minor-mode flycheck-mode undo-tree-mode linum-mode)
+  1058
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 23420 62284 159655 448000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (985))))
+
+(desktop-create-buffer 208
+  nil
+  "proto"
+  'dired-mode
+  '(linum-mode)
+  282
+  '(8095 nil)
+  t
+  '("/home/mmxgn/Projects/Public/PhD/stage3/text2soundscene/proto/")
+  '((buffer-display-time 23421 38198 803293 42000))
+  '((mark-ring (8073))))
+
