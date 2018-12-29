@@ -47,7 +47,7 @@
 (load-theme 'material t) ;; load material theme
 (global-linum-mode t) ;; enable line numbers globally
 
-(menu-bar-mode -1) ;; hide menu bar
+;; (menu-bar-mode -1) ;; hide menu bar
 (tool-bar-mode -1) ;; hide tool bar
 (scroll-bar-mode -1) ;; hide scroll bar
 (show-paren-mode 1) ;; Show matching parenthesis
@@ -83,7 +83,7 @@
     ("~/Projects/Public/PhD/stage3/text2soundscene/proto/isospace.org")))
  '(package-selected-packages
    (quote
-    (faust-mode faustine gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (poly-markdown poly-org polymode projectile yasnippet faust-mode faustine gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -169,3 +169,31 @@
 (setq auto-mode-alist (cons '("\\.dsp$" . faustine-mode) auto-mode-alist))
 (global-auto-complete-mode t)
 
+(require 'mmm-mode)
+(set-face-background 'mmm-default-submode-face nil)
+(setq mmm-global-mode 'maybe)
+
+(mmm-add-classes
+ '((python-sql
+    :submode sql-mode
+    :face mmm-code-submode-face
+    :front "# SQL\\(\n\\|\t\\)*\\(\[ -_A-Z0-9\]+\\)\\(\[ =\]\\)\\(\"\"\"\\|'''\\)"
+    :back "\\(\"\"\"\\|'''\\)\\( \\|\t\\|\n\\)*\\# /SQL")))
+
+(mmm-add-mode-ext-class 'python-mode "*.py" 'python-sql)
+(setq mmm-never-modes
+               (append '(ediff-mode) '(text-mode) mmm-never-modes))
+
+
+
+(set-face-background 'mmm-default-submode-face nil)
+
+ (mmm-add-classes
+  '((embedded-sql
+     :submode sql-mode
+     :front "/* SQL */"
+     :back "/* #SQL */")))
+
+ (mmm-add-mode-ext-class 'c-mode "*.c" 'c-sql)
+ (setq mmm-never-modes
+               (append '(ediff-mode) '(text-mode) mmm-never-modes))

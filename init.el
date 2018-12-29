@@ -47,7 +47,7 @@
 (load-theme 'material t) ;; load material theme
 (global-linum-mode t) ;; enable line numbers globally
 
-(menu-bar-mode -1) ;; hide menu bar
+;; (menu-bar-mode -1) ;; hide menu bar
 (tool-bar-mode -1) ;; hide tool bar
 (scroll-bar-mode -1) ;; hide scroll bar
 (show-paren-mode 1) ;; Show matching parenthesis
@@ -83,7 +83,7 @@
     ("~/Projects/Public/PhD/stage3/text2soundscene/proto/isospace.org")))
  '(package-selected-packages
    (quote
-    (mmm-mode projectile yasnippet faust-mode faustine gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
+    (poly-markdown poly-org polymode projectile yasnippet faust-mode faustine gnuplot gnuplot-mode helm-bibtexkey ob-ipython ob-prolog ob-browser ob-http org-ac org-ref htmlize markdown-mode markdown-mode+ fill-column-indicator undo-tree py-autopep8 material-theme flycheck elpy better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -168,4 +168,64 @@
 (require 'faustine)
 (setq auto-mode-alist (cons '("\\.dsp$" . faustine-mode) auto-mode-alist))
 (global-auto-complete-mode t)
+
+(require 'polymode)
+
+;; Markdown polymode (example)
+
+(defcustom pm-host/markdown
+  (pm-host-chunkmode :name "markdown"
+                     :mode 'markdown-mode)
+  "Markdown host chunkmode"
+  :group 'poly-hostmodes
+  :type 'object)
+
+(defcustom  pm-inner/markdown-fenced-code
+  (pm-inner-auto-chunkmode :name "markdown-fenced-code"
+                           :head-matcher "^[ \t]*```[{ \t]*\\w.*$"
+                           :tail-matcher "^[ \t]*```[ \t]*$"
+                           :mode-matcher (cons "```[ \t]*{?\\(?:lang *= *\\)?\\([^ \t\n;=,}]+\\)" 1))
+  "Markdown fenced code block."
+  :group 'poly-innermodes
+  :type 'object)
+
+(defcustom  pm-inner/markdown-inline-code
+  (pm-inner-auto-chunkmode :name "markdown-inline-code"
+                           :head-matcher (cons "[^`]\\(`{?[[:alpha:]+-]+\\)[ \t]" 1)
+                           :tail-matcher (cons "[^`]\\(`\\)[^`]" 1)
+                           :mode-matcher (cons "`[ \t]*{?\\(?:lang *= *\\)?\\([[:alpha:]+-]+\\)" 1)
+                           :head-mode 'host
+                           :tail-mode 'host)
+  "Markdown inline code."
+  :group 'poly-innermodes
+  :type 'object)
+
+
+(define-polymode poly-markdown-mode
+  :hostmode 'pm-host/markdown
+  :innermodes '(pm-inner/markdown-fenced-code
+                pm-inner/markdown-inline-code))
+
+;; Python polymode (example)
+
+(defcustom pm-host/python
+  (pm-host-chunkmode :name "python"
+                     :mode 'python-mode)
+  "Python host chunkmode"
+  :group 'poly-hostmodes
+  :type 'object)
+
+(defcustom  pm-inner/python-fenced-code
+  (pm-inner-auto-chunkmode :name "python-minor"
+                           :head-matcher "^[ \t]*#\\+BEGIN_SRC[ \t]+\\w+\n+[ \t]*[A-Za-z0-9_]\+[ \t]*=[ \t]*r?[\'\"]+"
+                           :tail-matcher "[\"\']+\\([A-Za-z0-9_()\\.]+\\)?\n*[ \t]*#\\+END_SRC[ \t]*"
+                           :mode-matcher (cons "^[ \t]*#\\+BEGIN_SRC[ \t]+\\(\\w+\\)" 1))
+  "Python fenced code block."
+  :group 'poly-innermodes
+  :type 'object)
+
+
+(define-polymode poly-python-mode
+  :hostmode 'pm-host/python
+  :innermodes '(pm-inner/python-fenced-code))
 
